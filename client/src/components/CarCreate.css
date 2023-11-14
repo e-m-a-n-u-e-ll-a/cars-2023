@@ -1,0 +1,66 @@
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #b11111; /* Set the background color to red (#ff0000) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.image-container {
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px 0 0 8px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Set border-radius to make the image with round corners */
+}
+
+form {
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #e9e2e2;
+    font-size: 25px;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 25px;
+}
+
+button:hover {
+    background-color: #555;
+}

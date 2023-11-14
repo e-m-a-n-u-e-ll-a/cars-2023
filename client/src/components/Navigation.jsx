@@ -7,7 +7,7 @@ export default function Navigation() {
     <ul className="nav-list">
       <li><Link to="/">Home</Link></li>
       <li><Link to="/data/catalog">Catalog</Link></li>
-      <li><Link to="#">Services</Link></li>
+      <li><Link to="/data/create">Upload a car</Link></li>
       <li><Link to="#">Login</Link></li>
       <li><Link to="#">Register</Link></li>
     </ul>
