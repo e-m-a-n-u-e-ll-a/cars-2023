@@ -16,7 +16,10 @@ mongoose.connection.on('error', (error) => {
 });
 app.use(bodyParser.json());
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:' * '
+  }));
+  
 app.use(auth);
 app.get('/', (req, res) => {
     res.json({ text: "It'/ working" })

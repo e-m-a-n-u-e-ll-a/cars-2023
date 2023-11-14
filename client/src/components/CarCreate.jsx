@@ -1,10 +1,12 @@
 import './CarCreate.css';
-
+import { create } from '../services/carService'
 export default function CarCreate() {
-    function createCarHandler(e) {
+    async function createCarHandler(e) {
         e.preventDefault();
         let carData = Object.fromEntries(new FormData(e.currentTarget));
-        console.log(carData)
+        console.log(carData);
+        let result = await create(carData);
+        console.log(result);
     }
     return (
         <section>

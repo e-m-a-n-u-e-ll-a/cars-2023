@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 //    res.json(car)
 });
 
-router.post('/', isAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     console.log(req.body);
     await carService.create({ ...req.body, _ownerId: req.user._id });
     res.json({ ok: true })
