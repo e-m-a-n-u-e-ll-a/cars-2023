@@ -1,0 +1,32 @@
+section {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .car {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .car img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.4;
+  }
