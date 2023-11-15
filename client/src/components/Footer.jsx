@@ -1,12 +1,14 @@
+import {Link} from 'react-router-dom';
 import './Footer.css'
+
 export default function Footer() {
-return(
+return (
 
   <footer>
     <p>&copy; 2023 Car Website</p>
     <div className="footer-links">
    
-      <a href="/about">About Us</a>
+      <Link to="/about">About Us</Link>
       
     </div>
   </footer>

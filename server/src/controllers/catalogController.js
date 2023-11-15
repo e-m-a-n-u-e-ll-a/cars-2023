@@ -2,7 +2,7 @@ let router = require('express').Router();
 let carService = require('../services/carService');
 let { isAuth } = require('../middlewares/authMiddleware')
 router.get('/', async (req, res) => {
-  //  let car = await carService.getAll();
+  
     try {
         let cars = await carService.getAll();
         res.header('Content-Type', 'application/json');
@@ -12,14 +12,12 @@ router.get('/', async (req, res) => {
         res.status(404).json({ error: 'Data not found' });
       }
 
-
-//    res.header('Content-Type', 'application/json'); // Set Content-Type header
-//    res.json(car)
 });
 
 router.post('/', async (req, res) => {
     console.log(req.body);
-    await carService.create({ ...req.body, _ownerId: req.user._id });
+   // await carService.create({ ...req.body, _ownerId: req.user._id });
+   await carService.create(req.body);
     res.json({ ok: true })
 });
 

@@ -1,6 +1,6 @@
 let Car = require('../models/Car');
 
-exports.getAll = async() =>await Car.find({});
+exports.getAll = () => Car.find({});
 
 exports.create = (carData) => Car.create(carData);
 
