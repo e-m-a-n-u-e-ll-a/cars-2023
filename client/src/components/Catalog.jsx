@@ -10,7 +10,7 @@ export default function Catalog() {
     gameService.getAll()
       .then(result => setCars(result))
   }, []);
-  console.log(cars);
+
 
 
 
@@ -19,10 +19,12 @@ export default function Catalog() {
       {cars.map(car => (
         <CarCard
           key={car._id}
+          _id={car._id}
           model={car.model}
           img={car.img}
           description={car.description} />
       ))}
+      {cars.length === 0 && (<h3>No posts</h3>)}
     </ul>
   );
 }

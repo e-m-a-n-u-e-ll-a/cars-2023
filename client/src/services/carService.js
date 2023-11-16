@@ -21,3 +21,14 @@ export const getAll = async () => {
     let result = response.json();
     return result
 }
+
+export const getOne = async (id) => {
+    let response = await fetch(`${baseUrl}/data/catalog/${id}`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+    });
+    let result = response.json();
+    return result
+}
