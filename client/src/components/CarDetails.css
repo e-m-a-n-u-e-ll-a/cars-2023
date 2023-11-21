@@ -1,53 +1,112 @@
 .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.car-details {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  width: 600px;
+  height: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.car-details img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+  border-top: 2px solid #ddd;
+  padding-top: 8px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+form {
+  margin-top: flex;
+  color: black;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+.comments {
+  margin-top: 20px;
+}
+
+.comments h3 {
+  margin-bottom: 10px;
+}
+
+.comments ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comments li {
+  
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%; /* Adjust the width as needed */
+   
+  }
+  .commentsSection {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-.car-details {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 20px;
-    width: 600px;
-    height: 700px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .car-details img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    border-top: 2px solid #ddd;
-    padding-top: 8px;
-  }
-  
-  p {
-    font-size: 16px;
-    color: #555;
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
   }

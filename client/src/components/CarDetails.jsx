@@ -12,6 +12,7 @@ export default function CarDetails() {
             .then(result => setCar(result));
     }, [id]);
     return (
+        <>
         <div className='container'>
 
             <div className="car-details">
@@ -22,7 +23,34 @@ export default function CarDetails() {
                 <p>Mileage: {car.mileage}</p>
                 <button><Link to={'/data/catalog'}>Back </Link></button>
             </div>
+           
+      
+
+
+            <form>
+                <label>Add Comment:</label>
+                <textarea></textarea>
+                <button type="submit">Submit Comment</button>
+            </form>
+        
+
+    
+
+         <div className="comments">
+         <h3>Comments:</h3>
+         <ul>
+
+             <li>cena</li>
+             <li>cena?</li>
+             <li>Cena</li>
+             <li>цена</li>
+
+         </ul>
+     </div>
+
+
 
         </div>
+        </>
     )
 }
