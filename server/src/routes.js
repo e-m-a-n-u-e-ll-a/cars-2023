@@ -5,5 +5,5 @@ let catalogController = require('./controllers/catalogController');
 
 
 router.use('/users', userController);
-router.use('/data/catalog', catalogController);
+router.use('/data', catalogController);
 module.exports = router
