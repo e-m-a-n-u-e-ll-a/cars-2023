@@ -15,7 +15,7 @@ export default function Navigation() {
                     <>
                         <li><Link to="/data/catalog">Catalog</Link></li>
                         <li><Link to="/data/create">Upload a car</Link></li>
-                        <li><Link to="/users/logout" >Logout</Link></li>
+                        <li><Link to="/users/logout">Logout</Link></li>
                     </>
                 ) : (
                     <>

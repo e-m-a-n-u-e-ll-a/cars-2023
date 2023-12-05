@@ -11,6 +11,8 @@ section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    background-color: transparent;
+    
 }
 
 
@@ -18,6 +20,7 @@ section {
     overflow: hidden;
     max-width: 100%;
     border-radius: 8px 0 0 8px;
+    background-color: transparent;
 }
 
 img {
@@ -26,15 +29,16 @@ img {
     border-radius: 8px; /* Set border-radius to make the image with round corners */
 }
 
-form {
+.createform {
     padding: 20px;
+    background-color: transparent;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
-    color: #e9e2e2;
     font-size: 25px;
+    background-color:  transparent;
 }
 
 input, textarea, button {

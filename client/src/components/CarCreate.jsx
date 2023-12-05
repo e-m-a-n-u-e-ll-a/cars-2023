@@ -22,7 +22,7 @@ export default function CarCreate() {
                 <div className="image-container">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK_Wwtedp-CqmUm_WWN4ez0QiHF3Tp8ZrJo7qzGlNUlS9HW8JKDOvmsf-Hrxn3rvopnok&usqp=CAU" alt="Car Image" />
                 </div>
-                <form onSubmit={createCarHandler}>
+                <form className='createform' onSubmit={createCarHandler}>
                     <label htmlFor="model">Car Model:</label>
                     <input type="text" id="model" name="model" required />
 

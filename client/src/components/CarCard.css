@@ -1,6 +1,5 @@
 
 .car {
-  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
   margin: 10px;
@@ -10,14 +9,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid #ddd;
-  max-width: 300px; 
-  background-color:#eaeaea98;
+  max-width: 300px;
+  background-color: #eaeaea98; 
   transition: transform 0.3s ease-in-out;
 }
 .car:hover {
-  transform: scale(1.05); 
+  transform: translateY(-5px);
 }
+
 .car img {
   width: 200px;
   height: 350px; 
