@@ -3,7 +3,7 @@ let userService = require('../services/userService');
 
 router.post('/register', async (req, res) => {
     let { email, password } = req.body;
-    console.log('User is: '+ req.body)
+    // console.log('User is: '+ req.body)
 
     try {
         let user = await userService.register({ email, password });
@@ -25,6 +25,7 @@ router.post('/register', async (req, res) => {
 router.post('/login', async (req, res) => {
     let { email, password } = req.body;
     let { user, token } = await userService.login({ email, password });
+   //console.log(req.headers);
     res.json({
         _id: user._id,
         email: user.email,

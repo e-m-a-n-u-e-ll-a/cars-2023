@@ -1,12 +1,10 @@
 let baseUrl = 'http://localhost:3001'
 export const login = async (email, password) => {
-    let token = localStorage.getItem('accessToken');
     try {
         let response = await fetch(`${baseUrl}/users/login`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
-                'X-Authorization': token
+                'content-type': 'application/json'
             },
             body: JSON.stringify({ email, password })
         });
@@ -23,12 +21,12 @@ export const login = async (email, password) => {
 }
 
 export const register = async (email, password) => {
-    let token = localStorage.getItem('accessToken');
+   // let token = localStorage.getItem('accessToken');
     let response = await fetch(`${baseUrl}/users/register`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
-            'X-Authorization': token
+            'content-type': 'application/json',
+           // 'X-Authorization': localStorage.getItem('accessToken')
         },
         body: JSON.stringify({ email, password })
     });

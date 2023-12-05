@@ -1,11 +1,11 @@
 let jwt = require('jsonwebtoken');
-let SECRET = require('../constants');
+let { SECRET } = require('../constants');
 exports.auth = function (req, res, next) {
-    let token = req.headers['X-Authorization'];
-    
+    let token = req.header('X-Authorization');
+   // console.log(token);
+
     if (token) {
-        let decodedToken = jwt.verify(token, 'mysupersecretsecret');
-        console.log(req.user);
+        let decodedToken = jwt.verify(token, SECRET);
         if (decodedToken) {
             req.user = decodedToken;
 
@@ -16,12 +16,12 @@ exports.auth = function (req, res, next) {
     } else {
         next();
     }
-}
+};
 
 exports.isAuth = function (req, res, next) {
     if (req.user) {
         next();
     } else {
-        res.status(401).json({ message: 'you are not authorized' })
+        res.status(401).json({ message: 'you are not authorized' });
     }
-}
+};

@@ -18,18 +18,19 @@ function App() {
     let navigate = useNavigate();
     let [auth, setAuth] = useState(() => {
         localStorage.removeItem('accessToken');
-        navigate('/')
+
         return {}
     });
 
     let loginSubmitHandler = async (values) => {
         try {
             let result = await authService.login(values.email, values.password);
+           // console.log(result);
             setAuth(result);
             localStorage.setItem('accessToken', result.accessToken)
-            console.log(localStorage.setItem('accessToken', result.accessToken))
+            // console.log(localStorage.setItem('accessToken', result.accessToken))
             navigate('/data/catalog');
-            console.log(result);
+            // console.log(result.accessToken);
         } catch (error) {
             console.error("Login failed:", error);
 
@@ -38,13 +39,15 @@ function App() {
     let registerSubmitHandler = async (values) => {
         let result = await authService.register(values.email, values.password);
         console.log(values);
-        setAuth(result); localStorage.setItem('accessToken', result.accessToken)
+        setAuth(result);
+         localStorage.setItem('accessToken', result.accessToken.token)
         console.log(result)
         navigate('/data/catalog')
     }
 
     let logoutHandler = () => {
         setAuth({});
+        navigate('/')
         localStorage.removeItem('accessToken');
 
     }

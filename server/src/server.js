@@ -1,6 +1,6 @@
 const port = process.env.PORT || 3001;
 let express = require('express');
-let cors = require('cors');
+let cors = require('../src/middlewares/cors');
 let mongoose = require('mongoose');
 let bodyParser = require('body-parser')
 let routes = require('./routes');
@@ -17,10 +17,7 @@ mongoose.connection.on('error', (error) => {
 
 app.use(bodyParser.json());
 
-app.use(cors({
-    origin: '*'
-}));
-
+app.use(cors());
 app.use(auth);
 app.get('/', (req, res) => {
     res.json({ text: "It'/ working" })

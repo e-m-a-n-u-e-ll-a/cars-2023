@@ -1,14 +1,18 @@
 let baseUrl = 'http://localhost:3001'
 export const create = async (data) => {
+    let token = localStorage.getItem('accessToken');
+    console.log(token);
     let response = await fetch(`${baseUrl}/data/create`, {
         method: 'POST',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'X-Authorization': localStorage.getItem("accessToken")
+
         },
         body: JSON.stringify(data)
     });
+    console.log(response.headers);
     let result = await response.json();
-    //console.log(result);
     return result
 }
 

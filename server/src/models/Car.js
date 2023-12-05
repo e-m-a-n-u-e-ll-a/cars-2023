@@ -7,6 +7,10 @@ let carSchema = new mongoose.Schema({
     price: Number,
     year: Number,
     mileage: String,
+    comments: [{
+        type: mongoose.Types.ObjectId,
+        ref: 'Comment'
+    }],
     _ownerId: {
         type: mongoose.Types.ObjectId,
         ref: 'User'
