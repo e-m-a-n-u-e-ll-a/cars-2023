@@ -29,7 +29,23 @@ router.get('/catalog/:carId', async (req, res) => {
     res.json(car)
 });
 
-router.post('/catalog/:carId', async (req, res) => {
+router.put('/catalog/:carId', async (req, res) => {
+    await carService.update(req.params.carId, req.body);
+    res.json({ ok: true })
+});
+
+router.delete('/catalog/:carId', async (req, res) => {
+    await carService.delete(req.params.carId);
+    res.json({ ok: true })
+})
+
+
+
+router.get('/catalog/:carId/comments', async (req, res) => {
+    let comments = await commentService.getCommentsByCarId(req.params.carId)
+    res.json(comments)
+});
+router.post('/catalog/:carId/comments', async (req, res) => {
     let data = req.body;
     let carId = req.params.carId
     console.log(carId)
@@ -45,13 +61,4 @@ router.post('/catalog/:carId', async (req, res) => {
     res.json(comment)
 });
 
-router.put('/catalog/:carId', async (req, res) => {
-    await carService.update(req.params.carId, req.body);
-    res.json({ ok: true })
-});
-
-router.delete('/catalog/:carId', async (req, res) => {
-    await carService.delete(req.params.carId);
-    res.json({ ok: true })
-})
 module.exports = router;

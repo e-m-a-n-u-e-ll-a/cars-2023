@@ -1,7 +1,7 @@
 section {
     max-width: 800px;
     margin: 20px auto;
-    background-color: #b11111; /* Set the background color to red (#ff0000) */
+    background-color: #b11111; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     overflow: hidden;

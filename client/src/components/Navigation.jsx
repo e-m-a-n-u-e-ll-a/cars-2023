@@ -4,9 +4,9 @@ import './Navigation.css'
 import { Link } from 'react-router-dom'
 import AuthContext from '../contexts/AuthContext'
 export default function Navigation() {
-  //  console.log('Navigation component rendered')
+    //  console.log('Navigation component rendered')
     let { isAuthenticated, email } = useContext(AuthContext)
-    
+
     return (
         <nav>
             <ul className="nav-list">
@@ -19,6 +19,7 @@ export default function Navigation() {
                     </>
                 ) : (
                     <>
+                        <li><Link to="/data/catalog">Catalog</Link></li>
                         <li><Link to="/users/login">Login</Link></li>
                         <li><Link to="/users/register">Register</Link></li>
                     </>

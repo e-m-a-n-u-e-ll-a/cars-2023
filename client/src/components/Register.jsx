@@ -10,19 +10,22 @@ export default function Register() {
         repeatPassword: ''
     })
     return (
-        <form onSubmit={onSubmit}>
-            <h2>Register</h2>
+        <div className='registerFormContainer'>
 
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" onChange={onChange} values={values.email} required />
+            <form onSubmit={onSubmit}>
+                <h2>Register</h2>
 
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" onChange={onChange} values={values.password} required />
+                <label htmlFor="email">Email:</label>
+                <input type="email" id="email" name="email" onChange={onChange} values={values.email} required />
 
-            <label htmlFor="repeatPassword">Repeat password:</label>
-            <input type="password" id="repeatPassword" name="repeatPassword" onChange={onChange} values={values.repeatPassword} required />
+                <label htmlFor="password">Password:</label>
+                <input type="password" id="password" name="password" onChange={onChange} values={values.password} required />
 
-            <button type="submit">Register</button>
-        </form>
+                <label htmlFor="repeatPassword">Repeat password:</label>
+                <input type="password" id="repeatPassword" name="repeatPassword" onChange={onChange} values={values.repeatPassword} required />
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
     )
 }

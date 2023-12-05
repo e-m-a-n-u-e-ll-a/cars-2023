@@ -12,9 +12,9 @@ export default function Login() {
         password: ''
     })
     return (
-        <div className="login-container">
-            <h2>Login</h2>
+      <div className='loginFormContainer'>
             <form onSubmit={onSubmit}>
+            <h2>Login</h2>
                 <label htmlFor="email">Email:</label>
                 <input type="text" id="email" name="email" onChange={onChange} value={values.email} required />
 
@@ -23,6 +23,7 @@ export default function Login() {
 
                 <button type="submit">Login</button>
             </form>
-        </div>
+    
+      </div>
     )
 }
