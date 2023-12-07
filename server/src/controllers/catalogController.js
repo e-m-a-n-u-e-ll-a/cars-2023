@@ -29,12 +29,12 @@ router.get('/catalog/:carId', async (req, res) => {
     res.json(car)
 });
 
-router.put('/catalog/:carId', async (req, res) => {
+router.put('/catalog/:carId/edit', async (req, res) => {
     await carService.update(req.params.carId, req.body);
     res.json({ ok: true })
 });
 
-router.delete('/catalog/:carId', async (req, res) => {
+router.delete('/catalog/:carId/delete', async (req, res) => {
     await carService.delete(req.params.carId);
     res.json({ ok: true })
 })

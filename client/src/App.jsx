@@ -13,6 +13,7 @@ import AuthContext from "./contexts/AuthContext"
 import * as authService from './services/authService'
 import Register from "./components/Register"
 import Logout from "./components/Logout"
+import EditCar from "./components/EditCar"
 
 function App() {
     let navigate = useNavigate();
@@ -75,6 +76,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/data/create" element={<CarCreate />}></Route>
                     <Route path="/data/catalog/:id" element={<CarDetails />}></Route>
+                    <Route path="/data/catalog/:id/edit" element={<EditCar />}></Route>
 
                 </Routes>
                 <Footer />

@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { useState } from "react";
 
-export default function useForm(submitHandler, initialValues = {}) {
+export default function useForm(submitHandler, initialValues ) {
     // eslint-disable-next-line no-unused-vars
     let [values, setValues] = useState(initialValues);
     let onChange = (e) => {

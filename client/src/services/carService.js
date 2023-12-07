@@ -37,3 +37,28 @@ export const getOne = async (id) => {
     let result = response.json();
     return result
 }
+
+export const editCar = async (id, car) => {
+    let response = await fetch(`${baseUrl}/data/catalog/${id}/edit`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(car)
+    });
+    let result = response.json();
+    return result
+}
+
+export const removeItem = async (id) => {
+    let response = await fetch(`${baseUrl}/data/catalog/${id}/delete`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json'
+        }
+    });
+    if (response.status === 204) {
+
+        return {};
+    }
+}

@@ -2,7 +2,7 @@
 import './CarDetails.css'
 import * as carService from '../services/carService';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Comment from './Comment';
 import { useContext } from 'react';
@@ -13,8 +13,7 @@ export default function CarDetails() {
     let [car, setCar] = useState({})
     let [comments, setComments] = useState([]);
     let { id } = useParams();
-
-
+    let navigate = useNavigate()
 
     useEffect(() => {
         carService.getOne(id)
@@ -36,6 +35,11 @@ export default function CarDetails() {
     }
     let isOwner = _id === car._ownerId;
 
+    let onDeleteEventHandler = async (e) => {
+        await carService.removeItem(id);
+        navigate('/data/catalog')
+    }
+
 
     return (
         <>
@@ -49,14 +53,14 @@ export default function CarDetails() {
                         <p>Mileage: {car.mileage}</p>
                         {isOwner && (<div className='edit-delete-btns'>
                             <button>
-                                Edit
+                                <Link to={`/data/catalog/${id}/edit`}>Edit</Link>
                             </button>
 
-                            <button>
-                                Delete
+                            <button onClick={onDeleteEventHandler}>
+                                <Link to={`/data/catalog/${id}/delete`}>Delete</Link>
                             </button>
                         </div>)}
-                    
+
                         <button>
                             <Link to={'/data/catalog'}>Back </Link>
                         </button>
