@@ -16,13 +16,13 @@ export default function Register() {
                 <h2>Register</h2>
 
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" onChange={onChange} values={values.email} required />
+                <input type="email" id="email" name="email" onChange={onChange} value={values.email} required />
 
                 <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" onChange={onChange} values={values.password} required />
+                <input type="password" id="password" name="password" onChange={onChange} value={values.password} required />
 
                 <label htmlFor="repeatPassword">Repeat password:</label>
-                <input type="password" id="repeatPassword" name="repeatPassword" onChange={onChange} values={values.repeatPassword} required />
+                <input type="password" id="repeatPassword" name="repeatPassword" onChange={onChange} value={values.repeatPassword} required />
 
                 <button type="submit">Register</button>
             </form>

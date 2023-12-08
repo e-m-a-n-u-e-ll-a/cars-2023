@@ -36,8 +36,13 @@ export default function CarDetails() {
     let isOwner = _id === car._ownerId;
 
     let onDeleteEventHandler = async (e) => {
-        await carService.removeItem(id);
-        navigate('/data/catalog')
+        try {
+
+            await carService.removeItem(id);
+            navigate('/data/catalog')
+        } catch (err) {
+            console.log(err);
+        }
     }
 
 

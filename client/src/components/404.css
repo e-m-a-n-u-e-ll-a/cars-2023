@@ -1,0 +1,33 @@
+#error-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.container {
+    text-align: center;
+}
+
+.error-code {
+    font-size: 8em;
+    color: #e74c3c;
+    margin: 0;
+}
+
+.message {
+    font-size: 1.5em;
+    color: #555;
+}
+
+.image-container {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

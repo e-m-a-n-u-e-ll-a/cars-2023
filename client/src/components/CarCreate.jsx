@@ -6,12 +6,10 @@ export default function CarCreate() {
     async function createCarHandler(e) {
         e.preventDefault();
         let carData = Object.fromEntries(new FormData(e.currentTarget));
-       // console.log(carData);
-        try {
-            await carService.create(carData);
-           
-            navigate('/data/catalog');
 
+        try {
+                await carService.create(carData);
+                navigate('/data/catalog');
         } catch (err) {
             console.log('Error: ', err);
         }
@@ -24,7 +22,7 @@ export default function CarCreate() {
                 </div>
                 <form className='createform' onSubmit={createCarHandler}>
                     <label htmlFor="model">Car Model:</label>
-                    <input type="text" id="model" name="model" required />
+                    <input type="text" id="model" name="model" />
 
                     <label htmlFor="img">Image URL:</label>
                     <input type="text" id="img" name="img" required />

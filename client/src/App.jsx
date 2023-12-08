@@ -14,6 +14,8 @@ import * as authService from './services/authService'
 import Register from "./components/Register"
 import Logout from "./components/Logout"
 import EditCar from "./components/EditCar"
+import NotFound from "./components/404"
+import IsAuth from "./components/IsAuth"
 
 function App() {
     let navigate = useNavigate();
@@ -26,7 +28,7 @@ function App() {
     let loginSubmitHandler = async (values) => {
         try {
             let result = await authService.login(values.email, values.password);
-           // console.log(result);
+            // console.log(result);
             setAuth(result);
             localStorage.setItem('accessToken', result.accessToken)
             // console.log(localStorage.setItem('accessToken', result.accessToken))
@@ -41,7 +43,7 @@ function App() {
         let result = await authService.register(values.email, values.password);
         console.log(values);
         setAuth(result);
-         localStorage.setItem('accessToken', result.accessToken.token)
+        localStorage.setItem('accessToken', result.accessToken.token)
         console.log(result)
         navigate('/data/catalog')
     }
@@ -74,9 +76,10 @@ function App() {
                     <Route path="/users/logout" element={<Logout />} />
                     <Route path="/data/catalog" element={<Catalog />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/data/create" element={<CarCreate />}></Route>
+                    <Route path="/data/create" element={<IsAuth><CarCreate /></IsAuth>}></Route>
                     <Route path="/data/catalog/:id" element={<CarDetails />}></Route>
-                    <Route path="/data/catalog/:id/edit" element={<EditCar />}></Route>
+                    <Route path="/data/catalog/:id/edit" element={<IsAuth> <EditCar /></IsAuth>}></Route>
+                    <Route path="*" element={<NotFound />}></Route>
 
                 </Routes>
                 <Footer />
