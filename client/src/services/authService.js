@@ -49,3 +49,14 @@ export const logout = async () => {
         return {};
     }
 };
+export const getMyCars = async (id) => {
+    let response = await fetch(`${baseUrl}/users/${id}/myposts`, {
+        method: 'GET',
+        headers: {
+            'content-type': 'application/json'
+        }
+    });
+    let result = response.json();
+    return result
+}
+

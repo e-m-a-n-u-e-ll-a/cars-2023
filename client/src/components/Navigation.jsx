@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import AuthContext from '../contexts/AuthContext'
 export default function Navigation() {
     //  console.log('Navigation component rendered')
-    let { isAuthenticated, email } = useContext(AuthContext)
+    let { isAuthenticated, _id } = useContext(AuthContext)
 
     return (
         <nav>
@@ -15,6 +15,7 @@ export default function Navigation() {
                     <>
                         <li><Link to="/data/catalog">Catalog</Link></li>
                         <li><Link to="/data/create">Upload a car</Link></li>
+                        <li><Link to={`/users/${_id}/myposts`}>My posts</Link></li>
                         <li><Link to="/users/logout">Logout</Link></li>
                     </>
                 ) : (

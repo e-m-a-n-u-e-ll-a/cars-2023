@@ -2,14 +2,16 @@ import './CarCreate.css';
 import * as carService from '../services/carService'
 import { useNavigate } from 'react-router-dom'
 export default function CarCreate() {
-    let navigate = useNavigate()
+
+    let navigate = useNavigate();
+
     async function createCarHandler(e) {
         e.preventDefault();
         let carData = Object.fromEntries(new FormData(e.currentTarget));
 
         try {
-                await carService.create(carData);
-                navigate('/data/catalog');
+            await carService.create(carData)
+            navigate('/data/catalog');
         } catch (err) {
             console.log('Error: ', err);
         }

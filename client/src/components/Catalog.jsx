@@ -1,17 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react'
 import CarCard from './CarCard'
-import * as gameService from '../services/carService';
+import * as carService from '../services/carService';
 import './Catalog.css'
 
 export default function Catalog() {
   let [cars, setCars] = useState([]);
   useEffect(() => {
-    gameService.getAll()
+    carService.getAll()
       .then(result => setCars(result))
   }, []);
-
-
 
 
   return (

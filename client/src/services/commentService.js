@@ -19,7 +19,6 @@ export const getAll = async (id) => {
         headers: {
             'content-type': 'application/json',
 
-
         }
     });
     let result = await response.json();

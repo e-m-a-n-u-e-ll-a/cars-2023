@@ -16,6 +16,7 @@ import Logout from "./components/Logout"
 import EditCar from "./components/EditCar"
 import NotFound from "./components/404"
 import IsAuth from "./components/IsAuth"
+import MyPosts from "./components/MyPosts"
 
 function App() {
     let navigate = useNavigate();
@@ -60,6 +61,7 @@ function App() {
         logoutHandler,
         email: auth.email,
         _id: auth._id,
+        posts: auth.posts || [],
         isAuthenticated: !!auth.email,
 
     }
@@ -79,6 +81,7 @@ function App() {
                     <Route path="/data/create" element={<IsAuth><CarCreate /></IsAuth>}></Route>
                     <Route path="/data/catalog/:id" element={<CarDetails />}></Route>
                     <Route path="/data/catalog/:id/edit" element={<IsAuth> <EditCar /></IsAuth>}></Route>
+                    <Route path="/users/:id/myposts" element={<IsAuth><MyPosts /></IsAuth>}></Route>
                     <Route path="*" element={<NotFound />}></Route>
 
                 </Routes>

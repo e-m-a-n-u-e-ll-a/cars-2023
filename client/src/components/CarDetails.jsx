@@ -27,12 +27,17 @@ export default function CarDetails() {
 
     let addCommentHandler = async (e) => {
         e.preventDefault();
-        let formData = new FormData(e.currentTarget);
-        let text = formData.get('text')
-        let comment = await commentService.create({ id, email, text })
-        setComments((prevComments) => [...prevComments, comment]);
-        e.currentTarget.value = ''
-    }
+        try {
+            let formData = new FormData(e.currentTarget);
+            let text = formData.get('text');
+            let comment = await commentService.create({ id, email, text });
+            console.log('Comment created successfully:', comment);
+            setComments((prevComments) => [...prevComments, comment]);
+        } catch (error) {
+            console.error('Error adding comment:', error);
+          
+        }
+    };
     let isOwner = _id === car._ownerId;
 
     let onDeleteEventHandler = async (e) => {

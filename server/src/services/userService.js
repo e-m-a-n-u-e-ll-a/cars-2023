@@ -1,6 +1,7 @@
 let User = require('../models/User');
 let jwt = require('jsonwebtoken');
-let { SECRET } = require('../constants')
+let { SECRET } = require('../constants');
+const Car = require('../models/Car');
 
 //SHOULD BE HASH!!!!!!!!!!!!
 exports.register = ({ email, password }) => User.create({ email, password });
@@ -17,4 +18,24 @@ exports.login = async ({ email, password }) => {
     } else {
         throw new Error('No such user');
     }
+};
+
+
+exports.pushPost = (id, post) => User.findByIdAndUpdate(id, { $push: { posts: post._id } });
+
+exports.getPostsByUserId = (userId) => {
+    return User.findById(userId)
+        .populate('posts') 
+        .exec()
+        .then((user) => {
+            if (user) {
+                return user.posts;
+            } else {
+                throw new Error('No such user');
+            }
+        })
+        .catch((error) => {
+            console.error('Error getting posts by user ID:', error);
+            throw error;
+        });
 };

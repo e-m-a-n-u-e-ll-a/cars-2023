@@ -27,6 +27,8 @@ export const getAll = async () => {
     return result
 }
 
+
+
 export const getOne = async (id) => {
     let response = await fetch(`${baseUrl}/data/catalog/${id}`, {
         method: 'GET',
