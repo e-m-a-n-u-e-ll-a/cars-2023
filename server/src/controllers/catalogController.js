@@ -32,7 +32,7 @@ router.get('/catalog/:carId', async (req, res) => {
 });
 
 router.put('/catalog/:carId/edit', async (req, res) => {
-    await carService.update(req.params.carId, req.body);
+    await carService.updatee(req.params.carId, req.body);
     res.json({ ok: true })
 });
 

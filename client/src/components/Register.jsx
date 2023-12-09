@@ -9,6 +9,7 @@ export default function Register() {
         password: '',
         repeatPassword: ''
     })
+ 
     return (
         <div className='registerFormContainer'>
 

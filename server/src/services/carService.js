@@ -11,3 +11,4 @@ exports.update = (id, data) => Car.findByIdAndUpdate(id, { $push: { comments: da
 exports.updateWithComments = (id, data) => Car.findByIdAndUpdate(id, { $push: { comments: data } })
 
 exports.delete = (id) => Car.findByIdAndDelete(id);
+exports.updatee = (id, body) => Car.findByIdAndUpdate(id, body)
